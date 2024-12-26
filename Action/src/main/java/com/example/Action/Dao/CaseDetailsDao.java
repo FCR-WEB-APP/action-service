@@ -43,7 +43,17 @@ public class CaseDetailsDao {
                 caseDetails.getStatus(),
                 date,
                 case_ref_no);
-        return caseDetails;
+
+        CaseDetails caseDetails1 = new CaseDetails();
+        caseDetails1.setCaseRefNo(case_ref_no);
+      //  caseDetails1.setGroupName(caseDetails.getGroupName());
+       // caseDetails1.setDivisionName(caseDetails.getGroupName());
+        caseDetails1.setActivityLevel(caseDetails.getActivityLevel());
+        caseDetails1.setStatus(caseDetails.getStatus());
+        caseDetails1.setAssignedTo(caseDetails.getAssignedTo());
+        caseDetails1.setCreatedDate(date);
+        caseDetails1.setUpdatedDate(date);
+        return caseDetails1;
     }
 
 }

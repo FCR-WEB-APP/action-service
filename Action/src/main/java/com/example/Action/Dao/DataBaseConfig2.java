@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "spring.datasource.db2")
 public class DataBaseConfig2 {
 
+
     private String url;
     private String userName;
     private String password;
