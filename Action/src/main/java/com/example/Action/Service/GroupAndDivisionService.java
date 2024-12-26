@@ -55,8 +55,8 @@ public class GroupAndDivisionService {
 
     }
 
-    public Map<String, Object> updateGroupAndDivision(GroupAndDivision groupAndDivision) {
-        String res = groupAndDivisionDao.updateGroupAndDivision(groupAndDivision);
+    public Map<String, Object> updateGroupAndDivision(Long sequenceId,GroupAndDivision groupAndDivision) {
+        String res = groupAndDivisionDao.updateGroupAndDivision(sequenceId,groupAndDivision);
         return Map.of(
                 "status", HttpStatus.OK.value(),
                 "success","successfully deleted",
