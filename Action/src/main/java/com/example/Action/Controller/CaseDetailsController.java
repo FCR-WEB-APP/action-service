@@ -30,7 +30,7 @@ public class CaseDetailsController {
 
     @PutMapping("/update/{case_ref_no}")
     public ResponseEntity<Map<String,Object>> updateCaseDetails(
-            @PathVariable int case_ref_no,
+            @PathVariable("case_ref_no") Long case_ref_no,
             @RequestBody CaseDetails caseDetails) {
         try{
                Map<String,Object> res = caseDetailsService.updateCaseDetails(case_ref_no, caseDetails);

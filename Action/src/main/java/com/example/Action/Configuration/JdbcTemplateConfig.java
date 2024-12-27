@@ -19,7 +19,7 @@ public class JdbcTemplateConfig {
     }
 
     @Bean(name = "jdbcTemplate2")
-    public JdbcTemplate jdbcTemplate2(@Qualifier("dataSource2") DataSource dataSource2) {
+    public JdbcTemplate jdbcTemplate2(@Qualifier("datasource2") HikariDataSource dataSource2) {
         return new JdbcTemplate(dataSource2);
     }
 
