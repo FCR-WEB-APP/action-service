@@ -20,8 +20,8 @@ public class CaseDetailsDao {
 
     public CaseDetails addcasedetails(CaseDetails caseDetails) {
         LocalDateTime date = LocalDateTime.now();
-       String sql = "INSERT INTO casedetails (group_Name, division_Name, activity_level, status, assigned_To, created_Date, updated_Date)" +
-               "VALUES (?, ?, ?, ?, ?, ?, ?)";
+       String sql = "INSERT INTO casedetails (group_Name, division_Name, activity_level, status, assigned_To, created_Date, updated_Date,planing,field_Work)" +
+               "VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
         jdbcTemplate1.update(sql,
                 caseDetails.getGroupName(),
                 caseDetails.getDivisionName(),
@@ -29,7 +29,7 @@ public class CaseDetailsDao {
                 caseDetails.getStatus(),
                 caseDetails.getAssignedTo(),
                 date,
-                date);
+                date,caseDetails.getPlaning(),caseDetails.getFieldWork());
         return caseDetails;
     }
 
@@ -53,6 +53,8 @@ public class CaseDetailsDao {
         caseDetails1.setAssignedTo(caseDetails.getAssignedTo());
         caseDetails1.setCreatedDate(date);
         caseDetails1.setUpdatedDate(date);
+        caseDetails1.setPlaning(caseDetails.getPlaning());
+        caseDetails1.setFieldWork(caseDetails.getFieldWork());
         return caseDetails1;
     }
 
