@@ -33,7 +33,7 @@ public class UploadController {
 //    }
 
     @PostMapping("/add")
-    public ResponseEntity<Map<String,Object>> addupload(@RequestBody Upload upload){
+    public ResponseEntity<Map<String,Object>>addupload(@RequestBody Upload upload){
         try{
             Map<String,Object> res = uploadService.addUpload(upload);
             return new ResponseEntity<>(res, HttpStatus.CREATED);

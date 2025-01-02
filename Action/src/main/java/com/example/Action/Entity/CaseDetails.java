@@ -22,6 +22,9 @@ public class CaseDetails {
     private String assignedTo;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
+    private String planing;
+    private String fieldWork;
+
 
     public Long getCaseRefNo() {
         return caseRefNo;
@@ -86,5 +89,21 @@ public class CaseDetails {
 
     public void setUpdatedDate(LocalDateTime updatedDate) {
         this.updatedDate = updatedDate;
+    }
+
+    public String getPlaning() {
+        return planing;
+    }
+
+    public void setPlaning(String planing) {
+        this.planing = planing;
+    }
+
+    public String getFieldWork() {
+        return fieldWork;
+    }
+
+    public void setFieldWork(String fieldWork) {
+        this.fieldWork = fieldWork;
     }
 }
