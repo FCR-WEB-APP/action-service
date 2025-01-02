@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/GroupAndDivison")
+@RequestMapping("api/GroupAndDivison")
 public class GroupAndDivisionController {
 
     private final GroupAndDivisionService groupAndDivisionService;
