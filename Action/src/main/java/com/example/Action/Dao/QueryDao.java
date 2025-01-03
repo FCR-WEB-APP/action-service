@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+
 @Repository
 public class QueryDao {
     private final JdbcTemplate jdbcTemplate1;
@@ -16,8 +18,9 @@ public class QueryDao {
 
 
     public int addQuery(Query query) {
-        String sql = "Insert Into Query (Query_Id,Child_Id,Query_Description,Response) values(?,?,?,?)";
-        return jdbcTemplate1.update(sql, query.getQueryId(), query.getChildId(), query.getQueryDescription(), query.getResponse());
+        LocalDateTime date = LocalDateTime.now();
+        String sql = "Insert Into Query (Query_Id,Child_Id,Query_Description,Response,Case_Ref_No,Assign_To,Status,Created_Date,Updated_Date) values(?,?,?,?,?,?,?,?,?)";
+        return jdbcTemplate1.update(sql, query.getQueryId(), query.getChildId(), query.getQueryDescription(), query.getResponse(),query.getAssignTo(),query.getCaseRefNo(),query.getStatus(),date,date);
     }
 
     public int deleteQuery(Long queryId) {

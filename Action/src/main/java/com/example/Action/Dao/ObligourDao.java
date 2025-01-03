@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+
 
 @Repository
 public class ObligourDao {
@@ -16,7 +18,8 @@ public class ObligourDao {
 
 
     public int addObligour(Obligour obligour) {
-        String sql = "Insert Into Obligour (OBLIGOUR_ID,CASE_REF_NO,Division_Name,CIF_ID,PREM_ID,ACTION,IN_TIME,OUT_TIME) values(?,?,?,?,?,?,?,?)";
-        return jdbcTemplate1.update(sql, obligour.getObligourId(), obligour.getCaseRefNo(), obligour.getDivisionName(), obligour.getCifId(), obligour.getPremId(), obligour.getAction(), obligour.getIn_Time(), obligour.getOut_Time());
+        LocalDateTime date = LocalDateTime.now();
+        String sql = "Insert Into Obligour (OBLIGOUR_ID,CASE_REF_NO,Division_Name,CIF_ID,PREM_ID,CREATED_DATE,UPDATED_DATE,ASSIGN_TO,STATUS) values(?,?,?,?,?,?,?,?,?)";
+        return jdbcTemplate1.update(sql, obligour.getObligourId(), obligour.getCaseRefNo(), obligour.getDivisionName(), obligour.getCifId(), obligour.getPremId(), date,date,obligour.getAssignTo(),obligour.getStatus());
     }
 }
