@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4586b20c-fa06-42ba-ba32-1608c1360b35" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Action/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Action/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2r8dLuzFKqZBKQHNhGetJ64JWto" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ActionApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.fileTypes"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.Action.Controller" />
+      <recent name="com.example.Action.Configuration" />
+      <recent name="com.example.Action.Service" />
+      <recent name="com.example.Action.Dao" />
+      <recent name="com.example.Action.Entity" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ActionApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.Action.ActionApplication" />
+      <module name="Action" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.Action.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ActionApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4586b20c-fa06-42ba-ba32-1608c1360b35" name="Changes" comment="" />
+      <created>1735944589556</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735944589556</updated>
+    </task>
+    <servers />
+  </component>
+</project>

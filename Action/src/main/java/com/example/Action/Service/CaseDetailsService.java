@@ -30,7 +30,7 @@ public class CaseDetailsService {
 
     }
 
-    public Map<String, Object> updateCaseDetails(int case_ref_no, CaseDetails caseDetails) {
+    public Map<String, Object> updateCaseDetails(Long case_ref_no, CaseDetails caseDetails) {
         CaseDetails caseDetails1 = caseDetailsDao.updateCaseDetails(case_ref_no,caseDetails);
         return Map.of(
                 "status", HttpStatus.OK.value(),

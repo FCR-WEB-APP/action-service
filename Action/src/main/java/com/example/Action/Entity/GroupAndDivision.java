@@ -15,6 +15,7 @@ import java.util.Map;
 @NoArgsConstructor
 public class GroupAndDivision {
 
+    private Long sequenceId;
     private String groupName;
     private String divisionName;
     private LocalDateTime createdDate;
@@ -22,6 +23,14 @@ public class GroupAndDivision {
     private  String isActive;
     private String createdBy;
     private String spocName;
+
+    public Long getSequenceId() {
+        return sequenceId;
+    }
+
+    public void setSequenceId(Long sequenceId) {
+        this.sequenceId = sequenceId;
+    }
 
     public String getGroupName() {
         return groupName;

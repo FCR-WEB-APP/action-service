@@ -14,21 +14,23 @@ import java.util.Date;
 @NoArgsConstructor
 public class CaseDetails {
 
-    private int caseRefNo;
+    private Long caseRefNo;
     private String groupName;
     private String divisionName;
-    private int primeId;
     private String activityLevel;
     private String status;
     private String assignedTo;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
+    private String planing;
+    private String fieldWork;
 
-    public int getCaseRefNo() {
+
+    public Long getCaseRefNo() {
         return caseRefNo;
     }
 
-    public void setCaseRefNo(int caseRefNo) {
+    public void setCaseRefNo(Long caseRefNo) {
         this.caseRefNo = caseRefNo;
     }
 
@@ -48,13 +50,6 @@ public class CaseDetails {
         this.divisionName = divisionName;
     }
 
-    public int getPrimeId() {
-        return primeId;
-    }
-
-    public void setPrimeId(int primeId) {
-        this.primeId = primeId;
-    }
 
     public String getActivityLevel() {
         return activityLevel;
@@ -94,5 +89,21 @@ public class CaseDetails {
 
     public void setUpdatedDate(LocalDateTime updatedDate) {
         this.updatedDate = updatedDate;
+    }
+
+    public String getPlaning() {
+        return planing;
+    }
+
+    public void setPlaning(String planing) {
+        this.planing = planing;
+    }
+
+    public String getFieldWork() {
+        return fieldWork;
+    }
+
+    public void setFieldWork(String fieldWork) {
+        this.fieldWork = fieldWork;
     }
 }
