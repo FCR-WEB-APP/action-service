@@ -6,7 +6,7 @@ import com.example.Action.Service.QueryService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/query")
+@RequestMapping("/api/query")
 public class QueryController {
     private final QueryService queryService;
 

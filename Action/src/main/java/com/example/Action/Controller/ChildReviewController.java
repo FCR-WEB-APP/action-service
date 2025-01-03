@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/childReview")
+@RequestMapping("/api/childReview")
 public class ChildReviewController {
     private final ChildReviewService childReviewService;
 

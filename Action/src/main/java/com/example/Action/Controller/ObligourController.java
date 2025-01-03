@@ -8,7 +8,7 @@ import com.example.Action.Service.ObligourService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/obligour")
+@RequestMapping("/api/obligour")
 public class ObligourController {
 
     private final ObligourService obligourService;
