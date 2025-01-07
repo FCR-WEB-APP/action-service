@@ -2,6 +2,8 @@ package com.example.Action.Controller;
 
 import com.example.Action.Entity.Upload;
 import com.example.Action.Service.UploadService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +34,10 @@ public class UploadController {
 //        }
 //    }
 
+    @Operation(summary = "addupload",
+            description = "addupload.")
+    @ApiResponse(responseCode = "200", description = "Successfully addupload")
+    @ApiResponse(responseCode = "400", description = " fail to  addupload")
     @PostMapping("/add")
     public ResponseEntity<Map<String,Object>>addupload(@RequestBody Upload upload){
         try{
@@ -42,7 +48,10 @@ public class UploadController {
         }
     }
 
-
+    @Operation(summary = "add file in uplaodFile table",
+            description = "add file in uplaodFile table.")
+    @ApiResponse(responseCode = "200", description = "Successfully addedFile")
+    @ApiResponse(responseCode = "400", description = " fail to  addFile")
     @PostMapping("/addFile/{upload_File_Id}")
     public ResponseEntity<Map<String, Object>> uploadFile(
             @RequestParam("file") MultipartFile file,
@@ -59,7 +68,10 @@ public class UploadController {
     }
 
 
-
+    @Operation(summary = "deleteUpload",
+            description = "deleteUpload.")
+    @ApiResponse(responseCode = "200", description = "Successfully deleteUpload")
+    @ApiResponse(responseCode = "400", description = " fail to  deleteUpload")
     @DeleteMapping("/delete/{upload_Id}/{case_Ref_No}")
     public ResponseEntity<Map<String,Object>> deleteUpload(@PathVariable ("upload_Id") Long uploadId,
                                                            @PathVariable("case_Ref_No") Long caseRefNo){
