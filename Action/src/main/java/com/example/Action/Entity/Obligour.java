@@ -3,6 +3,7 @@ package com.example.Action.Entity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -14,9 +15,39 @@ public class Obligour {
         private String divisionName;
         private Long cifId;
         private Long premId;
-        private String action ;
-        private Date in_Time;
-        private Date out_Time;
+        private LocalDateTime createdDate;
+        private LocalDateTime updatedDate;
+        private String assignTo;
+        private String status;
+
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDateTime createdDate) {
+        this.createdDate = createdDate;
+    }
+    public LocalDateTime getUpdatedDate() {
+        return updatedDate;
+    }
+    public void setUpdatedDate(LocalDateTime updatedDate) {
+        this.updatedDate = updatedDate;
+    }
+    public String getAssignTo() {
+        return assignTo;
+    }
+
+    public void setAssignTo(String assignTo) {
+        this.assignTo = assignTo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public Long getObligourId() {
         return obligourId;
@@ -58,27 +89,5 @@ public class Obligour {
         this.premId = premId;
     }
 
-    public String getAction() {
-        return action;
-    }
 
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-    public Date getIn_Time() {
-        return in_Time;
-    }
-
-    public void setIn_Time(Date in_Time) {
-        this.in_Time = in_Time;
-    }
-
-    public Date getOut_Time() {
-        return out_Time;
-    }
-
-    public void setOut_Time(Date out_Time) {
-        this.out_Time = out_Time;
-    }
 }
