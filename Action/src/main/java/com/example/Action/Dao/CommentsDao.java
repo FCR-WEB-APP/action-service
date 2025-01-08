@@ -18,23 +18,23 @@ public class CommentsDao {
 
     public Comments addComments(Comments comments) {
         LocalDateTime date = LocalDateTime.now();
-        String sql = "insert into comments (case_Ref_No,comments,commented_By,actions,created_Date,updated_Date)Values(?,?,?,?,?,?)";
-        jdbcTemplate1.update(sql,comments.getCaseRefNo(),comments.getComments(),
+        String sql = "insert into comments (comment_id,case_ref_no,comments,commented_by,actions,created_date,updated_date)Values(?,?,?,?,?,?,?)";
+        jdbcTemplate1.update(sql,comments.getCommentId(),comments.getCaseRefNo(),comments.getComments(),
                               comments.getCommentedBy(),comments.getActions(),date,date);
         return comments;
 
     }
 
-    public Comments updateComments(Long commentId, Long caseRefNo,Comments comments) {
+    public Comments updateComments(Long commentId, String caseRefNo,Comments comments) {
         LocalDateTime date = LocalDateTime.now();
-        String sql = "update comments SET comments = ? ,commented_By = ?,actions = ?,updated_Date = ? where comment_Id = ? And case_Ref_No = ?";
+        String sql = "update comments SET comments = ? ,commented_by = ?,actions = ?,updated_date = ? where comment_id = ? And case_ref_no = ?";
         jdbcTemplate1.update(sql,comments.getComments(),comments.getCommentedBy(),comments.getActions(),
                 date,commentId,caseRefNo);
         return  comments;
 
     }
 
-    public String deleteComments(Long commentId, Long caseRefNo) {
+    public String deleteComments(Long commentId, String caseRefNo) {
         String sql = "delete from comments where comment_Id = ? And case_Ref_No = ?";
         jdbcTemplate1.update(sql,commentId,caseRefNo);
         return "successfully deleted";

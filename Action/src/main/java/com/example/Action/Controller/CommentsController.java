@@ -41,7 +41,7 @@ public class CommentsController {
     @ApiResponse(responseCode = "400", description = " fail to updateComments")
     @PutMapping("/update/{comment_Id}/{case_Ref_No}")
     public ResponseEntity<Map<String,Object>> updateComments
-            (@PathVariable("comment_Id") Long commentId,@PathVariable("case_Ref_No")Long caseRefNo,@RequestBody Comments comments){
+            (@PathVariable("comment_Id") Long commentId,@PathVariable("case_Ref_No")String caseRefNo,@RequestBody Comments comments){
 
         try{
             Map<String,Object> res = commentsService.updateComments(commentId,caseRefNo,comments);
@@ -58,7 +58,7 @@ public class CommentsController {
     @ApiResponse(responseCode = "400", description = " fail to deleteComments")
     @DeleteMapping("/delete/{comment_Id}/{case_Ref_No}")
     public ResponseEntity<Map<String,Object>> deleteComments
-            (@PathVariable("comment_Id") Long commentId,@PathVariable("case_Ref_No")Long caseRefNo){
+            (@PathVariable("comment_Id") Long commentId,@PathVariable("case_Ref_No")String caseRefNo){
 
         try{
             Map<String,Object> res = commentsService.deleteComments(commentId,caseRefNo);

@@ -19,8 +19,9 @@ public class GroupAndDivisionDao {
 
     public GroupAndDivision addGpAndDv(GroupAndDivision groupAndDivision) {
         LocalDateTime date =LocalDateTime.now();
-        String sql = "insert into groupanddivision(group_Name,division_Name,spoc_Name,created_By,is_Active,created_Date,updated_Date)values(?,?,?,?,?,?,?)";
+        String sql = "insert into groupanddivision(sequence_id,group_name,division_name,spoc_name,created_by,is_active,created_date,updated_date)values(?,?,?,?,?,?,?,?)";
          jdbcTemplate1.update(sql,
+                            groupAndDivision.getSequenceId(),
                             groupAndDivision.getGroupName()
                              ,groupAndDivision.getDivisionName(),
                               groupAndDivision.getSpocName(), groupAndDivision.getCreatedBy()
@@ -29,20 +30,20 @@ public class GroupAndDivisionDao {
     }
 
     public String deletebyGroupname(String groupname) {
-        String sql = "delete from groupanddivision where group_Name = ?";
+        String sql = "delete from groupanddivision where group_name = ?";
         jdbcTemplate1.update(sql,groupname);
         return "deleted successfully";
     }
 
     public String deletebyDivisionname(String divisionName) {
-        String sql = "delete from groupanddivision where division_Name = ?";
+        String sql = "delete from groupanddivision where division_name = ?";
         jdbcTemplate1.update(sql,divisionName);
         return "deleted successfully";
 
     }
 
     public String deletebySpocname(String spocName) {
-        String sql = "delete from groupanddivision where spoc_Name = ?";
+        String sql = "delete from groupanddivision where spoc_name = ?";
         jdbcTemplate1.update(sql,spocName);
         return "deleted successfully";
 
@@ -50,7 +51,7 @@ public class GroupAndDivisionDao {
 
     public String updateGroupAndDivision(Long sequenceId, GroupAndDivision groupAndDivision) {
         LocalDateTime date = LocalDateTime.now();
-        String sql = "UPDATE groupanddivision SET group_Name = ?, division_Name = ?, spoc_Name = ?, updated_Date = ? WHERE sequence_Id = ?";
+        String sql = "UPDATE groupanddivision SET group_name = ?, division_name = ?, spoc_name = ?, updated_date = ? WHERE sequence_id = ?";
         jdbcTemplate1.update(
                 sql,
                 groupAndDivision.getGroupName(),

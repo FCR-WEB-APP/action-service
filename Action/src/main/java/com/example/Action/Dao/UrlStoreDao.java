@@ -15,7 +15,7 @@ public class UrlStoreDao {
 
 
     public void saveApiUrl(String url, String httpMethod) {
-        String sql = "INSERT INTO urlstore (api_Url, api_Method) VALUES (?, ?)";
+        String sql = "INSERT INTO urlstore (api_url, api_method) VALUES (?, ?)";
         jdbcTemplate1.update(sql, url, httpMethod);
     }
 }
