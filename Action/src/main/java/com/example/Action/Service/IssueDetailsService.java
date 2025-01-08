@@ -3,6 +3,7 @@ package com.example.Action.Service;
 import com.example.Action.Dao.IssueDetailsDAO;
 import com.example.Action.Entity.IssueDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -12,7 +13,9 @@ public class IssueDetailsService {
     private IssueDetailsDAO issueDetailsDAO;
 
     @Autowired
+    @Qualifier("queryServiceWebClient")
     private WebClient webClient;
+
     public int createIssueDetails(IssueDetails issueDetails) {
         return issueDetailsDAO.createIssueDetails(issueDetails);
     }
