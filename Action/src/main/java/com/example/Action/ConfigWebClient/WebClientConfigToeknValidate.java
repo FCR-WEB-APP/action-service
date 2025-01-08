@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
-public class WebClientConfig {
+public class WebClientConfigToeknValidate {
 
     private static final String BASE_URL = "http://localhost:1003/user";
 

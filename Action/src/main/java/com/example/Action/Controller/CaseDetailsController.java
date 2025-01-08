@@ -18,10 +18,6 @@ public class CaseDetailsController {
 
     private final CaseDetailsService caseDetailsService;
 
-  //  private final ValidTokenWebClient validTokenWebClient;
-
-   // private HttpServletRequest request;
-
     public CaseDetailsController(CaseDetailsService caseDetailsService) {
         this.caseDetailsService = caseDetailsService;
 
@@ -32,11 +28,8 @@ public class CaseDetailsController {
     @ApiResponse(responseCode = "200", description = "Successfully Added CaseDetails")
     @ApiResponse(responseCode = "400", description = " fail to add")
     @PostMapping("/addcasedetails")
-    public ResponseEntity<Map<String,Object>> addcasedetails(@RequestBody CaseDetails caseDetails /*,HttpServletRequest request */){
+    public ResponseEntity<Map<String,Object>> addcasedetails(@RequestBody CaseDetails caseDetails ){
         try{
-
-             //validTokenWebClient.validToken(request.getHeader("Authorization"));
-            //String str=request.getHeader("Authorization");
             Map<String,Object> res = caseDetailsService.addcasedetails(caseDetails);
             return new ResponseEntity<>(res, HttpStatus.OK);
         }catch (Exception e){
