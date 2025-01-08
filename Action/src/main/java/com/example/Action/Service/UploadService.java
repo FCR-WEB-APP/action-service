@@ -50,7 +50,7 @@ public class UploadService {
     }
 
 
-    public Map<String, Object> deleteUpload(Long uploadId, Long caseRefNo) {
+    public Map<String, Object> deleteUpload(Long uploadId, String caseRefNo) {
 
         Long uploadFileId = uploadDao.getUploadFileId(uploadId, caseRefNo);
 

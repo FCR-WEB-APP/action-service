@@ -74,7 +74,7 @@ public class UploadController {
     @ApiResponse(responseCode = "400", description = " fail to  deleteUpload")
     @DeleteMapping("/delete/{upload_Id}/{case_Ref_No}")
     public ResponseEntity<Map<String,Object>> deleteUpload(@PathVariable ("upload_Id") Long uploadId,
-                                                           @PathVariable("case_Ref_No") Long caseRefNo){
+                                                           @PathVariable("case_Ref_No") String caseRefNo){
         try{
             Map<String,Object> res = uploadService.deleteUpload(uploadId,caseRefNo);
             return new ResponseEntity<>(res,HttpStatus.OK);

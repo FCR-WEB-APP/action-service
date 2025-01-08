@@ -26,7 +26,7 @@ public class CommentsService {
         );
     }
 
-    public Map<String, Object> updateComments(Long commentId, Long caseRefNo,Comments comments) {
+    public Map<String, Object> updateComments(Long commentId, String caseRefNo,Comments comments) {
         Comments comments1 = commentsDao.updateComments(commentId,caseRefNo,comments);
         return Map.of(
                 "status", HttpStatus.OK.value(),
@@ -35,7 +35,7 @@ public class CommentsService {
         );
     }
 
-    public Map<String, Object> deleteComments(Long commentId, Long caseRefNo) {
+    public Map<String, Object> deleteComments(Long commentId, String caseRefNo) {
         String res = commentsDao.deleteComments(commentId,caseRefNo);
         return Map.of(
                 "status", HttpStatus.OK.value(),

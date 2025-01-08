@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 public class Upload {
     private Long uploadId;
-    private Long caseRefNo;
+    private String caseRefNo;
     private Long uploadFileId;
     private String documentType;
     private String docName;
@@ -36,11 +36,11 @@ public class Upload {
         this.uploadId = uploadId;
     }
 
-    public Long getCaseRefNo() {
+    public String getCaseRefNo() {
         return caseRefNo;
     }
 
-    public void setCaseRefNo(Long caseRefNo) {
+    public void setCaseRefNo(String caseRefNo) {
         this.caseRefNo = caseRefNo;
     }
 

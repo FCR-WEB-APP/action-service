@@ -59,7 +59,7 @@ public class UploadDao {
         LocalDateTime date = LocalDateTime.now();
 
 
-       String sql =  "INSERT INTO upload (upload_Id, case_Ref_No,upload_File_Id, document_Type, doc_Name,  sr_Credit_Reviewer, issue_Details, obligour, created_Date, updated_Date)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+       String sql =  "INSERT INTO upload (upload_id, case_ref_no,upload_file_id, document_type, doc_name,  sr_credit_reviewer, issue_details, obligour, created_date, updated_date)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 
         jdbcTemplate1.update(sql,
@@ -86,7 +86,7 @@ public class UploadDao {
 
         String filename = file.getOriginalFilename();
 
-        String sql = "insert into uploadfile (upload_File_Id,file_Content,file_Name) VALUES (?,?,?)";
+        String sql = "insert into uploadfile (upload_file_id,file_content,file_name) VALUES (?,?,?)";
         jdbcTemplate1.update(sql, uploadFileId,fileContentBytes,filename);
 
         UploadFile uploadFile = new UploadFile();
@@ -98,8 +98,8 @@ public class UploadDao {
 
 
 
-    public Long getUploadFileId(Long uploadId, Long caseRefNo) {
-        String query = "SELECT upload_File_Id FROM upload WHERE upload_Id = ? AND case_Ref_No = ?";
+    public Long getUploadFileId(Long uploadId, String caseRefNo) {
+        String query = "SELECT upload_File_Id FROM upload WHERE upload_id = ? AND case_ref_no = ?";
         try {
             return jdbcTemplate1.queryForObject(query, new Object[]{uploadId, caseRefNo}, Long.class);
         } catch (Exception e) {
@@ -107,13 +107,13 @@ public class UploadDao {
         }
     }
 
-    public void deleteFromUpload(Long uploadId, Long caseRefNo) {
-        String query = "DELETE FROM upload WHERE upload_Id = ? AND case_Ref_No = ?";
+    public void deleteFromUpload(Long uploadId, String caseRefNo) {
+        String query = "DELETE FROM upload WHERE upload_id = ? AND case_ref_no = ?";
         jdbcTemplate1.update(query, uploadId, caseRefNo);
     }
 
     public void deleteFromUploadFile(Long uploadFileId) {
-        String query = "DELETE FROM uploadfile WHERE upload_File_Id = ?";
+        String query = "DELETE FROM uploadfile WHERE upload_file_id = ?";
         jdbcTemplate1.update(query, uploadFileId);
     }
 }
