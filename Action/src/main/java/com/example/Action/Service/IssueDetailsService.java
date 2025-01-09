@@ -4,8 +4,10 @@ import com.example.Action.Dao.IssueDetailsDAO;
 import com.example.Action.Entity.IssueDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 @Service
 public class IssueDetailsService {
@@ -13,7 +15,7 @@ public class IssueDetailsService {
     private IssueDetailsDAO issueDetailsDAO;
 
     @Autowired
-    @Qualifier("queryServiceWebClient")
+   // @Qualifier("queryServiceWebClient")
     private WebClient webClient;
 
     public int createIssueDetails(IssueDetails issueDetails) {
@@ -22,12 +24,23 @@ public class IssueDetailsService {
 
 
 
-    public IssueDetails getIssueDetailsByIdFromQueryService(int issueId) {
+//    public IssueDetails getIssueDetailsByIdFromQueryService(Long issueId) {
+//        return webClient.get()
+//                .uri("/{issueId}", issueId)
+//                .retrieve()
+//                .bodyToMono(IssueDetails.class)
+//                .block();
+//    }
+
+    public IssueDetails getIssueDetailsByIdFromQueryService(Long issueId) {
+        System.out.println("12345");
         return webClient.get()
-                .uri("/api/issue-details/{issueId}", issueId)
+                .uri("http://localhost:1001/api/issue-details/{issueId}", issueId)  // Using placeholder for path variable
                 .retrieve()
                 .bodyToMono(IssueDetails.class)
                 .block();
     }
+
+
 }
 

@@ -1,10 +1,13 @@
 package com.example.Action.Dao;
 
+import com.example.Action.Entity.IssueDetails;
 import com.example.Action.Entity.IssueTrack;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.time.LocalDate;
 
 @Repository
 public class IssueTrackDAO {
@@ -15,20 +18,20 @@ public class IssueTrackDAO {
     }
 
     public int createIssueTrack(IssueTrack issueTrack) {
-        String sql = "INSERT INTO ISSUETRACK (TRACKISSUEID, ISSUEID, ISSUEDESCRIPTION, CASEREFNO, STATUS, ACTIVELEVEL, ACTION, CREATEDDATE, UPDATEDDATE, ASSIGNEDTO, RESPONSEWRS, RMSRESPONSE) " +
+        LocalDate date = LocalDate.now();
+        String sql = "INSERT INTO issuetrack (track_issue_id, issue_id, case_ref_no, issue_description, status, activity_level, actions, created_date, updated_date, assigned_to, wrs_response, rms_response) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         return jdbcTemplate1.update(sql,
-                issueTrack.getIssueId(),
                 issueTrack.getTrackIssueId(),
-                issueTrack.getIssueDescription(),
+                issueTrack.getIssueId(),
                 issueTrack.getCaseRefNo(),
+                issueTrack.getIssueDescription(),
                 issueTrack.getStatus(),
-                issueTrack.getActiveLevel(),
-                issueTrack.getAction(),
-                issueTrack.getCreatedDate(),
-                issueTrack.getUpdatedDate(),
+                issueTrack.getActivityLevel(),
+                issueTrack.getActions(),
+                date,date,
                 issueTrack.getAssignedTo(),
-                issueTrack.getResponseWRS(),
+                issueTrack.getWrsResponse(),
                 issueTrack.getRmsResponse());
     }
 
