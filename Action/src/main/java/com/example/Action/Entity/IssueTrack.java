@@ -1,56 +1,50 @@
 package com.example.Action.Entity;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class IssueTrack {
 
-    private int trackIssueId;
+    private Long trackIssueId;
 
-    private int issueId;  // Use only the issueId instead of the entire IssueDetails object
-
-    private String issueDescription;
+        private Long issueId;  // Use only the issueId instead of the entire IssueDetails object
 
     private String caseRefNo;
 
+    private String issueDescription;
+
     private String status;
 
-    private int activeLevel;
+    private String activityLevel;
 
-    private String action;
+    private String actions;
 
-    private Timestamp createdDate;
+    private LocalDateTime createdDate;
 
-    private Timestamp updatedDate;
+    private LocalDateTime updatedDate;
 
     private String assignedTo;
 
-    private String responseWRS;
+    private String wrsResponse;
 
     private String rmsResponse;
 
     // Getters and Setters
 
-    public int getActiveLevel() {
-        return activeLevel;
-    }
 
-    public void setActiveLevel(int activeLevel) {
-        this.activeLevel = activeLevel;
-    }
-
-    public int getTrackIssueId() {
+    public Long getTrackIssueId() {
         return trackIssueId;
     }
 
-    public void setTrackIssueId(int trackIssueId) {
+    public void setTrackIssueId(Long trackIssueId) {
         this.trackIssueId = trackIssueId;
     }
 
-    public int getIssueId() {
+    public Long getIssueId() {
         return issueId;
     }
 
-    public void setIssueId(int issueId) {
+    public void setIssueId(Long issueId) {
         this.issueId = issueId;
     }
 
@@ -78,27 +72,35 @@ public class IssueTrack {
         this.status = status;
     }
 
-    public String getAction() {
-        return action;
+    public String getActivityLevel() {
+        return activityLevel;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setActivityLevel(String activityLevel) {
+        this.activityLevel = activityLevel;
     }
 
-    public Timestamp getCreatedDate() {
+    public String getActions() {
+        return actions;
+    }
+
+    public void setActions(String actions) {
+        this.actions = actions;
+    }
+
+    public LocalDateTime getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Timestamp createdDate) {
+    public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Timestamp getUpdatedDate() {
+    public LocalDateTime getUpdatedDate() {
         return updatedDate;
     }
 
-    public void setUpdatedDate(Timestamp updatedDate) {
+    public void setUpdatedDate(LocalDateTime updatedDate) {
         this.updatedDate = updatedDate;
     }
 
@@ -110,12 +112,12 @@ public class IssueTrack {
         this.assignedTo = assignedTo;
     }
 
-    public String getResponseWRS() {
-        return responseWRS;
+    public String getWrsResponse() {
+        return wrsResponse;
     }
 
-    public void setResponseWRS(String responseWRS) {
-        this.responseWRS = responseWRS;
+    public void setWrsResponse(String wrsResponse) {
+        this.wrsResponse = wrsResponse;
     }
 
     public String getRmsResponse() {
@@ -125,5 +127,4 @@ public class IssueTrack {
     public void setRmsResponse(String rmsResponse) {
         this.rmsResponse = rmsResponse;
     }
-
 }

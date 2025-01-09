@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/issue-details")
 public class IssueDetailsController {
-    @Autowired
-    private IssueDetailsService issueDetailsService;
+
+    private final IssueDetailsService issueDetailsService;
+
+    public IssueDetailsController(IssueDetailsService issueDetailsService) {
+        this.issueDetailsService = issueDetailsService;
+    }
 
     @PostMapping
     public ResponseEntity<String> createIssueDetails(@RequestBody IssueDetails issueDetails) {
