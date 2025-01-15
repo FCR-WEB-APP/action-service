@@ -9,9 +9,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Query {
     private Long queryId;
-    private Long childId;
+    private Long childReviewId;
     private String caseRefNo;
-    private String assignTo;
+    private String assignedTo;
     private String status;
     private String queryDescription;
     private String response;
@@ -26,13 +26,6 @@ public class Query {
         this.caseRefNo = caseRefNo;
     }
 
-    public String getAssignTo() {
-        return assignTo;
-    }
-
-    public void setAssignTo(String assignTo) {
-        this.assignTo = assignTo;
-    }
 
     public String getStatus() {
         return status;
@@ -66,13 +59,7 @@ public class Query {
         this.queryId = queryId;
     }
 
-    public Long getChildId() {
-        return childId;
-    }
 
-    public void setChildId(Long childId) {
-        this.childId = childId;
-    }
 
     public String getQueryDescription() {
         return queryDescription;
@@ -88,5 +75,21 @@ public class Query {
 
     public void setResponse(String response) {
         this.response = response;
+    }
+
+    public String getAssignedTo() {
+        return assignedTo;
+    }
+
+    public void setAssignedTo(String assignedTo) {
+        this.assignedTo = assignedTo;
+    }
+
+    public Long getChildReviewId() {
+        return childReviewId;
+    }
+
+    public void setChildReviewId(Long childReviewId) {
+        this.childReviewId = childReviewId;
     }
 }

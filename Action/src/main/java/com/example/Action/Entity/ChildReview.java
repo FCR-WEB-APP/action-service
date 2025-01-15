@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ChildReview {
     private Long obligourId;
-    private Long childId;
-    private String assignTo;
+    private Long childReviewId;
+    private String assignedTo;
     private String caseRefNo;
     private String status;
     private String createdBy;
@@ -19,12 +19,12 @@ public class ChildReview {
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
 
-    public String getAssignTo() {
-        return assignTo;
+    public String getAssignedTo() {
+        return assignedTo;
     }
 
-    public void setAssignTo(String assignTo) {
-        this.assignTo = assignTo;
+    public void setAssignedTo(String assignedTo) {
+        this.assignedTo = assignedTo;
     }
 
     public String getCaseRefNo() {
@@ -83,19 +83,12 @@ public class ChildReview {
         this.obligourId = obligourId;
     }
 
-    public Long getChildId() {
-        return childId;
+    public Long getChildReviewId() {
+        return childReviewId;
     }
 
-    public void setChildId(Long childId) {
-        this.childId = childId;
+    public void setChildReviewId(Long childReviewId) {
+        this.childReviewId = childReviewId;
     }
 
-    public String getAssign_To() {
-        return assignTo;
-    }
-
-    public void setAssign_To(String assign_To) {
-        this.assignTo = assign_To;
-    }
 }
