@@ -6,13 +6,12 @@ public class IssueDetails {
 
 
     private Long issueId;
-
+    private String caseRefNo;
     private String status;
-
     private String actions;
-
+    private String assignedTo;
+    private String activityLevel;
     private LocalDateTime createdDate;
-
     private LocalDateTime updatedDate;
 
     public Long getIssueId() {
@@ -21,6 +20,14 @@ public class IssueDetails {
 
     public void setIssueId(Long issueId) {
         this.issueId = issueId;
+    }
+
+    public String getCaseRefNo() {
+        return caseRefNo;
+    }
+
+    public void setCaseRefNo(String caseRefNo) {
+        this.caseRefNo = caseRefNo;
     }
 
     public String getStatus() {
@@ -53,5 +60,21 @@ public class IssueDetails {
 
     public void setUpdatedDate(LocalDateTime updatedDate) {
         this.updatedDate = updatedDate;
+    }
+
+    public String getAssignedTo() {
+        return assignedTo;
+    }
+
+    public void setAssignedTo(String assignedTo) {
+        this.assignedTo = assignedTo;
+    }
+
+    public String getActivityLevel() {
+        return activityLevel;
+    }
+
+    public void setActivityLevel(String activityLevel) {
+        this.activityLevel = activityLevel;
     }
 }
