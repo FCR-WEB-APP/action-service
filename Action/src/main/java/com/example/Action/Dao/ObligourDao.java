@@ -16,10 +16,9 @@ public class ObligourDao {
         this.jdbcTemplate1 = jdbcTemplate1;
     }
 
-
     public int addObligour(Obligour obligour) {
         LocalDateTime date = LocalDateTime.now();
-        String sql = "Insert Into Obligour (OBLIGOUR_ID,CASE_REF_NO,Division_Name,CIF_ID,PREM_ID,CREATED_DATE,UPDATED_DATE,ASSIGN_TO,STATUS) values(?,?,?,?,?,?,?,?,?)";
+        String sql = "Insert Into Obligour (obligour_id,case_ref_no,division_name,cif_id,prem_id,created_date,updated_date,assign_to,status) values(?,?,?,?,?,?,?,?,?)";
         return jdbcTemplate1.update(sql, obligour.getObligourId(), obligour.getCaseRefNo(), obligour.getDivisionName(), obligour.getCifId(), obligour.getPremId(), date,date,obligour.getAssignTo(),obligour.getStatus());
     }
 }

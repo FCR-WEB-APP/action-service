@@ -20,9 +20,10 @@ public class CaseDetailsDao {
 
     public CaseDetails addcasedetails(CaseDetails caseDetails) {
         LocalDateTime date = LocalDateTime.now();
-       String sql = "INSERT INTO casedetails (group_Name, division_Name, activity_level, status, assigned_To, created_Date, updated_Date,planing,field_Work)" +
-               "VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
+       String sql = "INSERT INTO casedetails (case_ref_no,group_name, division_name, activity_level, status, assigned_to, created_date, updated_date,planing,field_work)" +
+               "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)";
         jdbcTemplate1.update(sql,
+                caseDetails.getCaseRefNo(),
                 caseDetails.getGroupName(),
                 caseDetails.getDivisionName(),
                 caseDetails.getActivityLevel(),
@@ -34,9 +35,9 @@ public class CaseDetailsDao {
     }
 
 
-    public  CaseDetails updateCaseDetails(Long case_ref_no, CaseDetails caseDetails) {
+    public  CaseDetails updateCaseDetails(String case_ref_no, CaseDetails caseDetails) {
         LocalDateTime date = LocalDateTime.now();
-        String sql = "UPDATE casedetails SET activity_Level = ?, assigned_To = ?, status = ?, updated_Date = ? WHERE case_Ref_No = ?";
+        String sql = "UPDATE casedetails SET activity_level = ?, assigned_to = ?, status = ?, updated_date = ? WHERE case_ref_no = ?";
         jdbcTemplate1.update(sql,
                 caseDetails.getActivityLevel(),
                 caseDetails.getAssignedTo(),

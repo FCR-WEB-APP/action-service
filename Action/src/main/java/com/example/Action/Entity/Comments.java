@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class Comments {
 
     private Long commentId;
-    private Long caseRefNo;
+    private String caseRefNo;
     private String comments;
     private String commentedBy;
     private String actions;
@@ -29,11 +29,11 @@ public class Comments {
         this.commentId = commentId;
     }
 
-    public Long getCaseRefNo() {
+    public String getCaseRefNo() {
         return caseRefNo;
     }
 
-    public void setCaseRefNo(Long caseRefNo) {
+    public void setCaseRefNo(String caseRefNo) {
         this.caseRefNo = caseRefNo;
     }
 
