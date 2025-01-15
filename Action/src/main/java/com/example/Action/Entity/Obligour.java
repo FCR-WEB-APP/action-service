@@ -17,8 +17,11 @@ public class Obligour {
         private Long premId;
         private LocalDateTime createdDate;
         private LocalDateTime updatedDate;
-        private String assignTo;
+        private String assignedTo;
         private String status;
+        private String activityLevel;
+        private String actions;
+
 
     public LocalDateTime getCreatedDate() {
         return createdDate;
@@ -33,12 +36,12 @@ public class Obligour {
     public void setUpdatedDate(LocalDateTime updatedDate) {
         this.updatedDate = updatedDate;
     }
-    public String getAssignTo() {
-        return assignTo;
+    public String getAssignedTo() {
+        return assignedTo;
     }
 
     public void setAssignTo(String assignTo) {
-        this.assignTo = assignTo;
+        this.assignedTo = assignTo;
     }
 
     public String getStatus() {
@@ -89,5 +92,23 @@ public class Obligour {
         this.premId = premId;
     }
 
+    public void setAssignedTo(String assignedTo) {
+        this.assignedTo = assignedTo;
+    }
 
+    public String getActivityLevel() {
+        return activityLevel;
+    }
+
+    public void setActivityLevel(String activityLevel) {
+        this.activityLevel = activityLevel;
+    }
+
+    public String getActions() {
+        return actions;
+    }
+
+    public void setActions(String actions) {
+        this.actions = actions;
+    }
 }

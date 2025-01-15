@@ -24,6 +24,7 @@ public class CaseDetails {
     private LocalDateTime updatedDate;
     private String planing;
     private String fieldWork;
+    private String actions;
 
 
     public String getCaseRefNo() {
@@ -105,5 +106,13 @@ public class CaseDetails {
 
     public void setFieldWork(String fieldWork) {
         this.fieldWork = fieldWork;
+    }
+
+    public String getActions() {
+        return actions;
+    }
+
+    public void setActions(String actions) {
+        this.actions = actions;
     }
 }

@@ -50,12 +50,15 @@ public class IssueDetailsDAO {
             issueDetails.setUpdatedDate(dateTime);
         }
 
-        String sql = "INSERT INTO ISSUEDETAILS (issue_id, status, actions, created_date, updated_date) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO ISSUEDETAILS (issue_id, status, actions, created_date, updated_date,case_ref_no,assigned_to,activity_level) VALUES (?, ?, ?, ?, ?,?,?,?)";
         return jdbcTemplate1.update(sql,
                 issueDetails.getIssueId(),
                 issueDetails.getStatus(),
                 issueDetails.getActions(),
                 issueDetails.getCreatedDate(),
-                issueDetails.getUpdatedDate());
+                issueDetails.getUpdatedDate(),
+                issueDetails.getCaseRefNo(),
+                issueDetails.getAssignedTo(),
+                issueDetails.getActivityLevel());
     }
 }

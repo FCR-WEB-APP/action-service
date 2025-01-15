@@ -20,8 +20,8 @@ public class CaseDetailsDao {
 
     public CaseDetails addcasedetails(CaseDetails caseDetails) {
         LocalDateTime date = LocalDateTime.now();
-       String sql = "INSERT INTO casedetails (case_ref_no,group_name, division_name, activity_level, status, assigned_to, created_date, updated_date,planing,field_work)" +
-               "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)";
+       String sql = "INSERT INTO casedetails (case_ref_no,group_name, division_name, activity_level, status, assigned_to, created_date, updated_date,planing,field_work,actions)" +
+               "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
         jdbcTemplate1.update(sql,
                 caseDetails.getCaseRefNo(),
                 caseDetails.getGroupName(),
@@ -30,7 +30,8 @@ public class CaseDetailsDao {
                 caseDetails.getStatus(),
                 caseDetails.getAssignedTo(),
                 date,
-                date,caseDetails.getPlaning(),caseDetails.getFieldWork());
+                date,caseDetails.getPlaning(),caseDetails.getFieldWork(),
+                 caseDetails.getActions());
         return caseDetails;
     }
 
@@ -47,8 +48,8 @@ public class CaseDetailsDao {
 
         CaseDetails caseDetails1 = new CaseDetails();
         caseDetails1.setCaseRefNo(case_ref_no);
-      //  caseDetails1.setGroupName(caseDetails.getGroupName());
-       // caseDetails1.setDivisionName(caseDetails.getGroupName());
+        caseDetails1.setGroupName(caseDetails.getGroupName());
+        caseDetails1.setDivisionName(caseDetails.getGroupName());
         caseDetails1.setActivityLevel(caseDetails.getActivityLevel());
         caseDetails1.setStatus(caseDetails.getStatus());
         caseDetails1.setAssignedTo(caseDetails.getAssignedTo());
@@ -56,6 +57,7 @@ public class CaseDetailsDao {
         caseDetails1.setUpdatedDate(date);
         caseDetails1.setPlaning(caseDetails.getPlaning());
         caseDetails1.setFieldWork(caseDetails.getFieldWork());
+        caseDetails1.setActions(caseDetails.getActions());
         return caseDetails1;
     }
 
