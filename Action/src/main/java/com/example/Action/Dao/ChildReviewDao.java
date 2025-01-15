@@ -18,7 +18,7 @@ private final JdbcTemplate jdbcTemplate1;
 
     public int addReview(ChildReview childReview) {
         LocalDateTime date = LocalDateTime.now();
-        String sql = "Insert Into Child_Review (Obligour_Id,child_Id,Assign_To,Case_Ref_No,Status,Created_By,Updated_By,Created_Date,Updated_Date) values(?,?,?,?,?,?,?,?,?)";
+        String sql = "Insert Into Child_Review (obligour_id,child_review_id,assign_to,case_ref_no,status,created_by,updated_by,created_date,updated_date) values(?,?,?,?,?,?,?,?,?)";
         return jdbcTemplate1.update(sql, childReview.getObligourId(), childReview.getChildId(), childReview.getAssign_To(),childReview.getCaseRefNo(),childReview.getStatus(),childReview.getCreatedBy(),childReview.getUpdatedBy(),date,date);
     }
 }

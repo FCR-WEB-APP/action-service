@@ -5,8 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4586b20c-fa06-42ba-ba32-1608c1360b35" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/Action/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Action/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Action/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Action/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Action/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/ActionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/ActionApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/ConfigSecurity/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/ConfigSecurity/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Configuration/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Configuration/DataSourceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Configuration/JdbcTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Configuration/JdbcTemplateConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Configuration/WebClientConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Configuration/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Configuration/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/CaseDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/CaseDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/ChildReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/ChildReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/CommentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/CommentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/GroupAndDivisionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/GroupAndDivisionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/IssueDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/IssueDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/IssueTrackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/IssueTrackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/ObligourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/ObligourController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/QueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/CaseAuditDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/CaseAuditDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/CaseDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/CaseDetailsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/ChildReviewDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/ChildReviewDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/CommentsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/CommentsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/DataBaseConfig1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/DataBaseConfig1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/DataBaseConfig2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/DataBaseConfig2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/GroupAndDivisionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/GroupAndDivisionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/IssueDetailsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/IssueDetailsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/IssueTrackDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/IssueTrackDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/ObligourDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/ObligourDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/QueryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/QueryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/UploadDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Dao/UploadDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/CaseAudit.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/CaseAudit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/CaseDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/CaseDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/ChildReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/ChildReview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/Comments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/GroupAndDivision.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/GroupAndDivision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/IssueDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/IssueDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/IssueTrack.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/IssueTrack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/Obligour.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/Obligour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/Upload.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/Upload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/UploadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Entity/UploadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/CaseAuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/CaseAuditService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/CaseDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/CaseDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/ChildReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/ChildReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/CommentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/CommentsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/GroupAndDivisionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/GroupAndDivisionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/IssueDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/IssueDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/IssueTrackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/IssueTrackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/ObligourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/ObligourService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/QueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/QueryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/UploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/java/com/example/Action/Service/UploadService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Action/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action/src/test/java/com/example/Action/ActionApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Action/src/test/java/com/example/Action/ActionApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +71,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2r8dLuzFKqZBKQHNhGetJ64JWto" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -27,16 +82,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ActionApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.fileTypes"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ActionApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.Action.Controller" />

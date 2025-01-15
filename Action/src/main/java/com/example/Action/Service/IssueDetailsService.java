@@ -5,6 +5,7 @@ import com.example.Action.Entity.IssueDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -15,22 +16,13 @@ public class IssueDetailsService {
     private IssueDetailsDAO issueDetailsDAO;
 
     @Autowired
-   // @Qualifier("queryServiceWebClient")
+
+    @Qualifier("queryServiceWebClient")
     private WebClient webClient;
 
     public int createIssueDetails(IssueDetails issueDetails) {
         return issueDetailsDAO.createIssueDetails(issueDetails);
     }
-
-
-
-//    public IssueDetails getIssueDetailsByIdFromQueryService(Long issueId) {
-//        return webClient.get()
-//                .uri("/{issueId}", issueId)
-//                .retrieve()
-//                .bodyToMono(IssueDetails.class)
-//                .block();
-//    }
 
     public IssueDetails getIssueDetailsByIdFromQueryService(Long issueId) {
         System.out.println("12345");
