@@ -7,6 +7,7 @@ import com.example.Action.Entity.Obligour;
 import com.example.Action.Service.ObligourService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 

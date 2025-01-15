@@ -1,25 +1,25 @@
 package com.example.Action.Entity;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class IssueDetails {
 
 
-    private int issueId;
+    private Long issueId;
 
     private String status;
 
-    private String action;
+    private String actions;
 
-    private Timestamp createdDate;
+    private LocalDateTime createdDate;
 
-    private Timestamp updatedDate;
+    private LocalDateTime updatedDate;
 
-    public int getIssueId() {
+    public Long getIssueId() {
         return issueId;
     }
 
-    public void setIssueId(int issueId) {
+    public void setIssueId(Long issueId) {
         this.issueId = issueId;
     }
 
@@ -31,27 +31,27 @@ public class IssueDetails {
         this.status = status;
     }
 
-    public String getAction() {
-        return action;
+    public String getActions() {
+        return actions;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setActions(String actions) {
+        this.actions = actions;
     }
 
-    public Timestamp getCreatedDate() {
+    public LocalDateTime getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Timestamp createdDate) {
+    public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Timestamp getUpdatedDate() {
+    public LocalDateTime getUpdatedDate() {
         return updatedDate;
     }
 
-    public void setUpdatedDate(Timestamp updatedDate) {
+    public void setUpdatedDate(LocalDateTime updatedDate) {
         this.updatedDate = updatedDate;
     }
 }

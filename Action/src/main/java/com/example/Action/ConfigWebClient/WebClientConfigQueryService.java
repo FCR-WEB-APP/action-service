@@ -1,3 +1,4 @@
+
 package com.example.Action.ConfigWebClient;
 
 import org.springframework.context.annotation.Bean;
@@ -13,4 +14,3 @@ public class WebClientConfigQueryService {
                 .build();
     }
 }
-

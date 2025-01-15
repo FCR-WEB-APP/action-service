@@ -20,15 +20,15 @@ public class IssueTrackController {
 
 
     @PostMapping("/create")
-    public ResponseEntity<String> createIssueTrack(@RequestBody IssueTrack issueTrack, @RequestParam int issueId) {
+    public ResponseEntity<String> createIssueTrack(@RequestBody IssueTrack issueTrack) {
         // Fetch IssueDetails from Query Service using WebClient
-        IssueDetails issueDetails = issueDetailsService.getIssueDetailsByIdFromQueryService(issueId);
+        //IssueDetails issueDetails = issueDetailsService.getIssueDetailsByIdFromQueryService(issueId);
 
-        if (issueDetails == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Issue ID does not exist in Query Service");
-        }
+//        if (issueDetails == null) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Issue ID does not exist in Query Service");
+//        }
 
-        issueTrackService.createIssueTrack(issueTrack, issueId);
+        issueTrackService.createIssueTrack(issueTrack);
         return ResponseEntity.ok("IssueTrack Created Successfully");
     }
 
