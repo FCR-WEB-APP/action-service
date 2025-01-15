@@ -26,6 +26,7 @@ public class QueryDao {
     public int deleteQuery(Long queryId) {
         String sql = "DELETE FROM Query WHERE query_id = ?";
         return jdbcTemplate1.update(sql, queryId);
+
     }
 }
 
