@@ -20,7 +20,6 @@ public class SpocSubmitCRTask {
     private Long issueTrackId;
     private String status;
     private String actions;
-//    private String assignedTo;
     private String activityLevel;
     private LocalDateTime updatedDate;
 
