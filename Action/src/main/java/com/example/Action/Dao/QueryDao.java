@@ -19,12 +19,15 @@ public class QueryDao {
 
     public int addQuery(Query query) {
         LocalDateTime date = LocalDateTime.now();
-        String sql = "Insert Into Query (query_id,child_review_id,query_description,response,case_ref_no,assign_to,status,created_date,updated_date) values(?,?,?,?,?,?,?,?,?)";
-        return jdbcTemplate1.update(sql, query.getQueryId(), query.getChildId(), query.getQueryDescription(), query.getResponse(),query.getAssignTo(),query.getCaseRefNo(),query.getStatus(),date,date);
+        String sql = "Insert Into Query (query_id,child_review_id,case_ref_no,assigned_to,status,query_description,response,created_date,updated_date) values(?,?,?,?,?,?,?,?,?)";
+        return jdbcTemplate1.update(sql, query.getQueryId(), query.getChildReviewId(), query.getCaseRefNo(), query.getAssignedTo(),query.getStatus(),query.getQueryDescription(),query.getResponse(),date,date);
     }
 
     public int deleteQuery(Long queryId) {
         String sql = "DELETE FROM Query WHERE query_id = ?";
         return jdbcTemplate1.update(sql, queryId);
+
     }
 }
+
+
