@@ -21,6 +21,7 @@ public class ObligourController {
         this.obligourService = obligourService;
     }
 
+
     @Operation(summary = "addObligour",
             description = "addObligour.")
     @ApiResponse(responseCode = "200", description = "Successfully added Obligour")
