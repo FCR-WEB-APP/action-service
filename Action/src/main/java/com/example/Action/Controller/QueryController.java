@@ -5,6 +5,7 @@ import com.example.Action.Entity.Query;
 import com.example.Action.Service.QueryService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,6 +22,7 @@ public class QueryController {
     @ApiResponse(responseCode = "200", description = "Successfully added Query")
     @ApiResponse(responseCode = "400", description = " fail to add Query")
     @PostMapping("/add")
+    @PreAuthorize("hasAnyAuthority('Sr.Credit Reviewer', 'Credit Reviewer')")
     public Query addQuery(@RequestBody Query query) {
         return queryService.addQuery(query);
     }

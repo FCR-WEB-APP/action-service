@@ -17,8 +17,11 @@ public class ObligourController {
         this.obligourService = obligourService;
     }
 
+
+
     @Operation(summary = "Add Obligour",
             description = "Add Obligour entity to the database.")
+
     @ApiResponse(responseCode = "200", description = "Successfully added Obligour")
     @ApiResponse(responseCode = "400", description = "Failed to add Obligour")
     @PostMapping("/add")

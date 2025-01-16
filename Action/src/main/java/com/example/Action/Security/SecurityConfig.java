@@ -29,7 +29,7 @@ public class SecurityConfig {
         http
                 .csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/api/obligour/add").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.Credit Reviewer","Credit Reviewer")))
+                        .requestMatchers("/api/obligour/add","/api/query/add").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.Credit Reviewer","Credit Reviewer")))
                         .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated()
                 )
