@@ -18,6 +18,7 @@ public class ChildReview {
     private String updatedBy;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
+    private String activityLevel;
 
     public String getAssignedTo() {
         return assignedTo;
@@ -91,4 +92,11 @@ public class ChildReview {
         this.childReviewId = childReviewId;
     }
 
+    public String getActivityLevel() {
+        return activityLevel;
+    }
+
+    public void setActivityLevel(String activityLevel) {
+        this.activityLevel = activityLevel;
+    }
 }

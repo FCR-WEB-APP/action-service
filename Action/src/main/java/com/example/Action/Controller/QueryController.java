@@ -31,7 +31,7 @@ public class QueryController {
             description = "deleteQuery.")
     @ApiResponse(responseCode = "200", description = "Successfully deleteQuery")
     @ApiResponse(responseCode = "400", description = " fail to  deleteQuery")
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public String deleteQuery(@RequestParam Long queryId) {
         String result = queryService.deleteQuery(queryId);
         return result;
