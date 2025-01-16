@@ -11,7 +11,7 @@ import java.util.Date;
 public class Obligour {
 
         private Long obligourId;
-        private Long caseRefNo;
+        private String caseRefNo;
         private String divisionName;
         private Long cifId;
         private Long premId;
@@ -60,11 +60,11 @@ public class Obligour {
         this.obligourId = obligourId;
     }
 
-    public Long getCaseRefNo() {
+    public String getCaseRefNo() {
         return caseRefNo;
     }
 
-    public void setCaseRefNo(Long caseRefNo) {
+    public void setCaseRefNo(String caseRefNo) {
         this.caseRefNo = caseRefNo;
     }
 
