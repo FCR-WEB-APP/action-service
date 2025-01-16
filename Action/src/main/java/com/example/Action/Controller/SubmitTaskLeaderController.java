@@ -34,7 +34,7 @@ public class SubmitTaskLeaderController {
     }
 
 
-    @PostMapping("/SubmitTaskLeader")
+    @PostMapping("/ScrToCR")
     public ResponseEntity<Map<String,Object>>submitTaskSpoc(@RequestBody SpocSubmitTask spocSubmitTask){
         try{
             Map<String,Object> res = submitTaskLeaderService.submitTaskSpoc(spocSubmitTask);

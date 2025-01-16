@@ -23,6 +23,7 @@ public class SpocSubmitTask {
     private String activityLevel;
     private LocalDateTime updatedDate;
 
+
     public String getCaseRefNo() {
         return caseRefNo;
     }
