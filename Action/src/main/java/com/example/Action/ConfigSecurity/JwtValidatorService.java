@@ -23,7 +23,7 @@ public class JwtValidatorService {
                     .bodyToMono(String.class)
                     .block(); // Synchronously waits for response
         } catch (WebClientResponseException e) {
-            throw new ForbiddenException("Invalid token: 403 Forbidden");
+            throw new ForbiddenException("Invalid token check token and username: 403 Forbidden");
         }
     }
 }
