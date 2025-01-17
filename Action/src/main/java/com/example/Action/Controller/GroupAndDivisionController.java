@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -25,6 +26,7 @@ public class GroupAndDivisionController {
     @ApiResponse(responseCode = "200", description = "Successfully AddGroupAndDivision")
     @ApiResponse(responseCode = "400", description = " fail to AddGroupAndDivision")
     @PostMapping("/add")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String, Object>> addGpAndDv(@RequestBody GroupAndDivision groupAndDivision) {
         try {
             Map<String, Object> res = groupAndDivisionService.addGpAndDv(groupAndDivision);
@@ -39,6 +41,7 @@ public class GroupAndDivisionController {
     @ApiResponse(responseCode = "200", description = "Successfully deletebyGroupname")
     @ApiResponse(responseCode = "400", description = " fail to deletebyGroupname")
     @DeleteMapping("/delete/groupname/{groupname}")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String, Object>> deletebyGroupname(@PathVariable("groupname") String groupname) {
         try {
             Map<String, Object> res = groupAndDivisionService.deletebyGroupname(groupname);
@@ -53,6 +56,7 @@ public class GroupAndDivisionController {
     @ApiResponse(responseCode = "200", description = "Successfully deletebyDivisionname")
     @ApiResponse(responseCode = "400", description = " fail to deletebyDivisionname")
     @DeleteMapping("/delete/divisionname/{divisionname}")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String, Object>> deletebyDivisionname(@PathVariable("divisionname") String divisionName) {
         try {
             Map<String, Object> res = groupAndDivisionService.deletebyDivisionname(divisionName);
@@ -67,6 +71,7 @@ public class GroupAndDivisionController {
     @ApiResponse(responseCode = "200", description = "Successfully deletebySpocname")
     @ApiResponse(responseCode = "400", description = " fail to deletebySpocname")
     @DeleteMapping("/delete/spocname/{spocname}")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String, Object>> deletebySpocname(@PathVariable("spocname") String spocName) {
         try {
             Map<String, Object> res = groupAndDivisionService.deletebySpocname(spocName);
@@ -81,6 +86,7 @@ public class GroupAndDivisionController {
     @ApiResponse(responseCode = "200", description = "Successfully updateGroupAndDivision")
     @ApiResponse(responseCode = "400", description = " fail to updateGroupAndDivision")
     @PutMapping("/update/{sequenceId}")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer','Spoc','HeadOfFcr')")
     public ResponseEntity<Map<String ,Object>> updateGroupAndDivision(@PathVariable("sequenceId") Long sequenceId, @RequestBody GroupAndDivision groupAndDivision){
         try{
             Map<String,Object> res = groupAndDivisionService.updateGroupAndDivision(sequenceId,groupAndDivision);

@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -25,6 +26,7 @@ public class CommentsController {
     @ApiResponse(responseCode = "200", description = "Successfully Added Comments")
     @ApiResponse(responseCode = "400", description = " fail to added Comments")
     @PostMapping("/add")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String,Object>> addComments(@RequestBody Comments comments){
         try{
             Map<String,Object> res = commentsService.addComments(comments);
@@ -40,6 +42,7 @@ public class CommentsController {
     @ApiResponse(responseCode = "200", description = "Successfully updateComments")
     @ApiResponse(responseCode = "400", description = " fail to updateComments")
     @PutMapping("/update/{comment_Id}/{case_Ref_No}")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer','Spoc','HeadOfFcr')")
     public ResponseEntity<Map<String,Object>> updateComments
             (@PathVariable("comment_Id") Long commentId,@PathVariable("case_Ref_No")String caseRefNo,@RequestBody Comments comments){
 
@@ -57,6 +60,7 @@ public class CommentsController {
     @ApiResponse(responseCode = "200", description = "Successfully deleteComments")
     @ApiResponse(responseCode = "400", description = " fail to deleteComments")
     @DeleteMapping("/delete/{comment_Id}/{case_Ref_No}")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String,Object>> deleteComments
             (@PathVariable("comment_Id") Long commentId,@PathVariable("case_Ref_No")String caseRefNo){
 

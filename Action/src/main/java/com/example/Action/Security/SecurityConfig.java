@@ -29,7 +29,9 @@ public class SecurityConfig {
         http
                 .csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/api/obligour/add","/api/query/add").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.Credit Reviewer","Credit Reviewer")))
+                        .requestMatchers("/api/obligour/add","/api/query/add","/api/query/delete","/api/childReview/add","api/addcasedetails","api/comments/add","api/comments/delete","api/GroupAndDivison/add","api/GroupAndDivison/delete","/api/issue-details/add","/api/issue-track/create","api/upload/add","api/upload/addFile","api/upload/delete").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer","CreditReviewer")))
+                        .requestMatchers("api/update","api/comments/update","api/GroupAndDivison/update","/api/ScrToCR","/api/SpocSubmitCRTask").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer","CreditReviewer","Spoc","HeadOfFcr")))
+                        .requestMatchers("/api/SubmitTaskLeader").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer","CreditReviewer","HeadOfFcr")))
                         .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated()
                 )
