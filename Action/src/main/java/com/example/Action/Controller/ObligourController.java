@@ -25,7 +25,7 @@ public class ObligourController {
     @ApiResponse(responseCode = "200", description = "Successfully added Obligour")
     @ApiResponse(responseCode = "400", description = "Failed to add Obligour")
     @PostMapping("/add")
-    @PreAuthorize("hasAnyAuthority('Sr.Credit Reviewer', 'Credit Reviewer')")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public Obligour addObligour(@RequestBody Obligour obligour) {
         return obligourService.addObligour(obligour);
     }

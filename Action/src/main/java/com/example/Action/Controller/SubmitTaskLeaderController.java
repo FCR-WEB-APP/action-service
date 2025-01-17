@@ -6,6 +6,7 @@ import com.example.Action.Dto.SubmitTaskLeader;
 import com.example.Action.Service.SubmitTaskLeaderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ public class SubmitTaskLeaderController {
     }
 
     @PostMapping("/SubmitTaskLeader")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer','HeadOfFcr')")
     public ResponseEntity<Map<String,Object>>submitTaskLeader(@RequestBody SubmitTaskLeader submitTaskLeader){
         try{
             Map<String,Object> res = submitTaskLeaderService.submitTaskLeader(submitTaskLeader);
@@ -35,6 +37,7 @@ public class SubmitTaskLeaderController {
 
 
     @PostMapping("/ScrToCR")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer','HeadOfFcr','Spoc')")
     public ResponseEntity<Map<String,Object>>submitTaskSpoc(@RequestBody SpocSubmitTask spocSubmitTask){
         try{
             Map<String,Object> res = submitTaskLeaderService.submitTaskSpoc(spocSubmitTask);
@@ -46,6 +49,7 @@ public class SubmitTaskLeaderController {
 
 
     @PostMapping("/SpocSubmitCRTask")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer','HeadOfFcr','Spoc')")
     public ResponseEntity<Map<String,Object>>spocSubmitCRTask(@RequestBody SpocSubmitCRTask spocSubmitCRTask){
         try{
             Map<String,Object> res = submitTaskLeaderService.spocSubmitCRTask(spocSubmitCRTask);

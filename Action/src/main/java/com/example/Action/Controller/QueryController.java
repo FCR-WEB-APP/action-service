@@ -22,7 +22,7 @@ public class QueryController {
     @ApiResponse(responseCode = "200", description = "Successfully added Query")
     @ApiResponse(responseCode = "400", description = " fail to add Query")
     @PostMapping("/add")
-    @PreAuthorize("hasAnyAuthority('Sr.Credit Reviewer', 'Credit Reviewer')")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public Query addQuery(@RequestBody Query query) {
         return queryService.addQuery(query);
     }
@@ -32,6 +32,7 @@ public class QueryController {
     @ApiResponse(responseCode = "200", description = "Successfully deleteQuery")
     @ApiResponse(responseCode = "400", description = " fail to  deleteQuery")
     @DeleteMapping("/delete")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public String deleteQuery(@RequestParam Long queryId) {
         String result = queryService.deleteQuery(queryId);
         return result;

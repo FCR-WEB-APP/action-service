@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -39,6 +40,7 @@ public class UploadController {
     @ApiResponse(responseCode = "200", description = "Successfully addupload")
     @ApiResponse(responseCode = "400", description = " fail to  addupload")
     @PostMapping("/add")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String,Object>>addupload(@RequestBody Upload upload){
         try{
             Map<String,Object> res = uploadService.addUpload(upload);
@@ -53,6 +55,7 @@ public class UploadController {
     @ApiResponse(responseCode = "200", description = "Successfully addedFile")
     @ApiResponse(responseCode = "400", description = " fail to  addFile")
     @PostMapping("/addFile/{upload_File_Id}")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String, Object>> uploadFile(
             @RequestParam("file") MultipartFile file,
             @PathVariable("upload_File_Id") Long uploadFileId) {
@@ -73,6 +76,7 @@ public class UploadController {
     @ApiResponse(responseCode = "200", description = "Successfully deleteUpload")
     @ApiResponse(responseCode = "400", description = " fail to  deleteUpload")
     @DeleteMapping("/delete/{upload_Id}/{case_Ref_No}")
+    @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
     public ResponseEntity<Map<String,Object>> deleteUpload(@PathVariable ("upload_Id") Long uploadId,
                                                            @PathVariable("case_Ref_No") String caseRefNo){
         try{
