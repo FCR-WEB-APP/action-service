@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
@@ -27,15 +29,37 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf((csrf) -> csrf.disable())
+                .csrf(customrize -> customrize.disable())// Disable CSRF for simplicity in an API environment
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/api/obligour/add","/api/query/add","/api/query/delete","/api/childReview/add","api/addcasedetails","api/comments/add","api/comments/delete","api/GroupAndDivison/add","api/GroupAndDivison/delete","/api/issue-details/add","/api/issue-track/create","api/upload/add","api/upload/addFile","api/upload/delete").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer","CreditReviewer")))
-                        .requestMatchers("api/update","api/comments/update","api/GroupAndDivison/update","/api/ScrToCR","/api/SpocSubmitCRTask").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer","CreditReviewer","Spoc","HeadOfFcr")))
-                        .requestMatchers("/api/SubmitTaskLeader").access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer","CreditReviewer","HeadOfFcr")))
-                        .requestMatchers("/error").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/api/obligour/add", "/api/query/add", "/api/query/delete", "/api/childReview/add",
+                                "/api/addcasedetails", "/api/comments/add", "/api/comments/delete", "/api/GroupAndDivison/add",
+                                "/api/GroupAndDivison/delete", "/api/issue-details/add", "/api/issue-track/create", "/api/upload/add",
+                                "/api/upload/addFile", "/api/upload/delete")
+                        .access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer", "CreditReviewer")))
+                        .requestMatchers("/api/update", "/api/comments/update", "/api/GroupAndDivison/update", "/api/ScrToCR", "/api/SpocSubmitCRTask")
+                        .access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer", "CreditReviewer", "Spoc", "HeadOfFcr")))
+                        .requestMatchers("/api/SubmitTaskLeader")
+                        .access(customRoleAuthorizationManager.forRole(Arrays.asList("Sr.CreditReviewer", "CreditReviewer", "HeadOfFcr")))
+                        .requestMatchers("/error").permitAll() // Allow access to error pages
+                        .anyRequest().authenticated() // All other requests need authentication
                 )
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class) // JWT authentication filter
+
+                // Add the CORS filter configuration
+                .cors(cors -> cors.configurationSource(request -> {
+                    CorsConfiguration corsConfig = new CorsConfiguration();
+                    corsConfig.addAllowedOrigin("http://localhost:5173");
+                    corsConfig.addAllowedMethod("*");
+                    corsConfig.addAllowedHeader("*");
+                    corsConfig.setAllowCredentials(true);
+                    return corsConfig;
+                }))
+                .headers(headers -> headers
+                        .defaultsDisabled()  // Disable default headers
+                        .addHeaderWriter((request, response) -> {
+                            response.setHeader("X-Frame-Options", "SAMEORIGIN"); // Set your custom header for frame options
+                        })
+                );
 
         return http.build();
     }
@@ -44,4 +68,6 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
+
+
 }
