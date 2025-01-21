@@ -1,6 +1,7 @@
 package com.example.Action.Service;
 
 import com.example.Action.Dao.CaseAuditDao;
+import com.example.Action.Entity.CaseDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,15 +11,17 @@ import java.util.Map;
 @Service
 public class CaseAuditService {
 
-    @Autowired
-    private CaseAuditDao caseAuditDao;
 
-    public List<Map<String, Object>> getAllCaseAudits() {
-        return caseAuditDao.getAllCaseAudits();
+    private final CaseAuditDao caseAuditDao;
+
+    public CaseAuditService(CaseAuditDao caseAuditDao) {
+        this.caseAuditDao = caseAuditDao;
     }
 
-    public Map<String, Object> getCaseAuditByCaseRefNo(String caseRefNo) {
-        return caseAuditDao.getCaseAuditByCaseRefNo(caseRefNo);
+
+    public void addCaseAudit(CaseDetails caseDetails,String username) {
+        caseAuditDao.addCaseAudit(caseDetails,username);
+
     }
 }
 

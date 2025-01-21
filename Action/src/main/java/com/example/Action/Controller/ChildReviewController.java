@@ -5,15 +5,12 @@ import com.example.Action.Service.ChildReviewService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
 @RequestMapping("/api/childReview")
+@CrossOrigin(origins = "http://localhost:5173")
 public class ChildReviewController {
     private final ChildReviewService childReviewService;
 

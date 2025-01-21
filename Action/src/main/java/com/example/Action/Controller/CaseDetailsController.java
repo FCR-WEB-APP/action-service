@@ -2,6 +2,7 @@ package com.example.Action.Controller;
 
 import com.example.Action.Entity.CaseDetails;
 //import com.example.Action.ExternalService.ValidTokenWebClient;
+import com.example.Action.Service.CaseAuditService;
 import com.example.Action.Service.CaseDetailsService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -19,10 +20,12 @@ import java.util.Map;
 public class CaseDetailsController {
 
     private final CaseDetailsService caseDetailsService;
+    private final CaseAuditService caseAuditService;
 
-    public CaseDetailsController(CaseDetailsService caseDetailsService) {
+    public CaseDetailsController(CaseDetailsService caseDetailsService, CaseAuditService caseAuditService) {
         this.caseDetailsService = caseDetailsService;
 
+        this.caseAuditService = caseAuditService;
     }
 
     @Operation(summary = "Add CaseDetails",
@@ -31,9 +34,11 @@ public class CaseDetailsController {
     @ApiResponse(responseCode = "400", description = " fail to add")
     @PostMapping("/addcasedetails")
     @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer')")
-    public ResponseEntity<Map<String,Object>> addcasedetails(@RequestBody CaseDetails caseDetails ){
+    public ResponseEntity<Map<String,Object>> addcasedetails(@RequestBody CaseDetails caseDetails,@RequestHeader("username")String username ){
         try{
-            Map<String,Object> res = caseDetailsService.addcasedetails(caseDetails);
+            Map<String,Object> res = caseDetailsService.addcasedetails(caseDetails,username);
+           caseAuditService.addCaseAudit(caseDetails,username);
+
             return new ResponseEntity<>(res, HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(Map.of("message", "Failed to added", "error", e.getMessage()), HttpStatus.BAD_REQUEST);
@@ -49,9 +54,9 @@ public class CaseDetailsController {
     @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer','Spoc','HeadOfFcr')")
     public ResponseEntity<Map<String,Object>> updateCaseDetails(
             @PathVariable("case_ref_no") String case_ref_no,
-            @RequestBody CaseDetails caseDetails) {
+            @RequestBody CaseDetails caseDetails,@RequestHeader("username")String username) {
         try{
-               Map<String,Object> res = caseDetailsService.updateCaseDetails(case_ref_no, caseDetails);
+               Map<String,Object> res = caseDetailsService.updateCaseDetails(case_ref_no, caseDetails,username);
             return new ResponseEntity<>(res, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(Map.of("message", "Failed to added", "error", e.getMessage()), HttpStatus.BAD_REQUEST);

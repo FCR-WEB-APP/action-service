@@ -18,10 +18,10 @@ public class CaseDetailsDao {
     }
 
 
-    public CaseDetails addcasedetails(CaseDetails caseDetails) {
+    public CaseDetails addcasedetails(CaseDetails caseDetails,String username) {
         LocalDateTime date = LocalDateTime.now();
-       String sql = "INSERT INTO casedetails (case_ref_no,group_name, division_name, activity_level, status, assigned_to, created_date, updated_date,planing,field_work,actions)" +
-               "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
+       String sql = "INSERT INTO casedetails (case_ref_no,group_name, division_name, activity_level, status, assigned_to, created_date, updated_date,planing,field_work,actions,created_by,updated_by)" +
+               "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?)";
         jdbcTemplate1.update(sql,
                 caseDetails.getCaseRefNo(),
                 caseDetails.getGroupName(),
@@ -31,19 +31,20 @@ public class CaseDetailsDao {
                 caseDetails.getAssignedTo(),
                 date,
                 date,caseDetails.getPlaning(),caseDetails.getFieldWork(),
-                 caseDetails.getActions());
+                 caseDetails.getActions(),
+                username,username);
         return caseDetails;
     }
 
 
-    public  CaseDetails updateCaseDetails(String case_ref_no, CaseDetails caseDetails) {
+    public  CaseDetails updateCaseDetails(String case_ref_no, CaseDetails caseDetails,String username) {
         LocalDateTime date = LocalDateTime.now();
-        String sql = "UPDATE casedetails SET activity_level = ?, assigned_to = ?, status = ?, updated_date = ? WHERE case_ref_no = ?";
+        String sql = "UPDATE casedetails SET activity_level = ?, assigned_to = ?, status = ?, updated_date = ?,updated_by = ? WHERE case_ref_no = ?";
         jdbcTemplate1.update(sql,
                 caseDetails.getActivityLevel(),
                 caseDetails.getAssignedTo(),
                 caseDetails.getStatus(),
-                date,
+                date,username,
                 case_ref_no);
 
         CaseDetails caseDetails1 = new CaseDetails();
@@ -58,6 +59,8 @@ public class CaseDetailsDao {
         caseDetails1.setPlaning(caseDetails.getPlaning());
         caseDetails1.setFieldWork(caseDetails.getFieldWork());
         caseDetails1.setActions(caseDetails.getActions());
+        caseDetails1.setCreatedBy(username);
+        caseDetails1.setUpdatedBy(username);
         return caseDetails1;
     }
 
