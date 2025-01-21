@@ -19,6 +19,7 @@ public class UrlStore {
     private String apiMethod;
     private LocalDateTime time;
 
+
     public long getId() {
         return id;
     }
