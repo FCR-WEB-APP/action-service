@@ -6,16 +6,15 @@ import java.time.LocalDateTime;
 public class CaseAudit {
     private String caseRefNo;
 
-    private String status;
+    private String Actions;
 
-    private LocalDateTime createdAt;
+    private String createdBy;
 
-    private LocalDateTime updatedAt;
+    private String updatedBy;
 
     private String actionBy;
 
-    private String activity;
-
+    private String activityLevel;
 
     public String getCaseRefNo() {
         return caseRefNo;
@@ -25,28 +24,28 @@ public class CaseAudit {
         this.caseRefNo = caseRefNo;
     }
 
-    public String getStatus() {
-        return status;
+    public String getActions() {
+        return Actions;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setActions(String actions) {
+        Actions = actions;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
+    public String getUpdatedBy() {
+        return updatedBy;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
     }
 
     public String getActionBy() {
@@ -57,23 +56,12 @@ public class CaseAudit {
         this.actionBy = actionBy;
     }
 
-    public String getActivity() {
-        return activity;
+    public String getActivityLevel() {
+        return activityLevel;
     }
 
-    public void setActivity(String activity) {
-        this.activity = activity;
-    }
-
-    // Lifecycle Callbacks for Timestamps
-
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-    }
-
-    protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
+    public void setActivityLevel(String activityLevel) {
+        this.activityLevel = activityLevel;
     }
 }
 

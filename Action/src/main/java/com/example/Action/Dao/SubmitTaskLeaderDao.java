@@ -20,9 +20,10 @@ public class SubmitTaskLeaderDao {
         this.jdbcTemplate1 = jdbcTemplate1;
     }
 
-    public SubmitTaskLeader submitTaskLeader(SubmitTaskLeader submitTaskLeader) {
+    public SubmitTaskLeader submitTaskLeader(SubmitTaskLeader submitTaskLeader,String username) {
         LocalDateTime date = LocalDateTime.now();
         String sql = "update casedetails set status = ?,actions = ?,assigned_to= ?,activity_level = ? ,updated_date = ? ,planing = ? , field_work = ? where case_ref_no = ?";
+        String caseAuditsql = "insert into case_audit(case_ref_no,actions,created_by,updated_by,action_by,activity_level) values (?,?,?,?,?,?)";
 
         // Handle "approve" action   //headofFCR submit to SCR
         if ((submitTaskLeader.getAssignedTo() == null || submitTaskLeader.getAssignedTo().isEmpty()) && StringUtils.equalsIgnoreCase(submitTaskLeader.getActions(), "approve")) {
@@ -31,6 +32,9 @@ public class SubmitTaskLeaderDao {
                     submitTaskLeader.getActivityLevel(), date, "Complete",
                     submitTaskLeader.getFieldWork(),
                     submitTaskLeader.getCaseRefNo());
+
+            String actions = "HeadOfFCR submitted to Sr.CreditReviewer (Approve)";
+            jdbcTemplate1.update(caseAuditsql,submitTaskLeader.getCaseRefNo(),actions,username,username,username,"Sr.CreditReviewer");
         }
         // Handle "reject" action   //headofFCR submit to SCR
         else if ((submitTaskLeader.getAssignedTo() == null || submitTaskLeader.getAssignedTo().isEmpty()) && StringUtils.equalsIgnoreCase(submitTaskLeader.getActions(), "reject")) {
@@ -39,6 +43,11 @@ public class SubmitTaskLeaderDao {
                     submitTaskLeader.getActivityLevel(), date, "InProgress",
                     submitTaskLeader.getFieldWork(),
                     submitTaskLeader.getCaseRefNo());
+
+
+            String actions = "HeadOfFCR submitted to Sr.CreditReviewer (Reject)";
+            jdbcTemplate1.update(caseAuditsql,submitTaskLeader.getCaseRefNo(),actions,username,username,username,"Sr.CreditReviewer");
+
         }
         // Handle case where "assignedTo" is empty or null  //SCR TO  headofFCR la submit karoty
         else if (submitTaskLeader.getAssignedTo() == null || submitTaskLeader.getAssignedTo().isEmpty()) {
@@ -46,6 +55,11 @@ public class SubmitTaskLeaderDao {
                     submitTaskLeader.getStatus(), submitTaskLeader.getActions(), submitTaskLeader.getAssignedTo(),
                     submitTaskLeader.getActivityLevel(), date, submitTaskLeader.getPlaning(),
                     submitTaskLeader.getFieldWork(), submitTaskLeader.getCaseRefNo());
+
+            String actions = "Sr.CreditReviewer submitted to HeadOfFCR";
+            jdbcTemplate1.update(caseAuditsql,submitTaskLeader.getCaseRefNo(),actions,username,username,username,"HeadOfFCR");
+
+
         }
         // Handle case where "assignedTo" is not empty  //SCR TO credit reviwer la  submit kartoy
         else if (submitTaskLeader.getAssignedTo() != null && !submitTaskLeader.getAssignedTo().isEmpty()) {
@@ -53,6 +67,21 @@ public class SubmitTaskLeaderDao {
                     submitTaskLeader.getStatus(), submitTaskLeader.getActions(), submitTaskLeader.getAssignedTo(),
                     submitTaskLeader.getActivityLevel(), date, submitTaskLeader.getPlaning(),
                     submitTaskLeader.getFieldWork(), submitTaskLeader.getCaseRefNo());
+
+            String actions = "Sr.CreditReviewer submitted to CreditReviewer";
+            jdbcTemplate1.update(caseAuditsql,submitTaskLeader.getCaseRefNo(),actions,username,username,username,"CreditReviewer");
+
+        }
+        //CreditReviewer to Sr.CreditReviewer
+        else if(StringUtils.equalsIgnoreCase("submit to Sr.CreditReviewer",submitTaskLeader.getActions())){
+            jdbcTemplate1.update(sql,submitTaskLeader.getStatus(), submitTaskLeader.getActions(), submitTaskLeader.getAssignedTo(),
+                    submitTaskLeader.getActivityLevel(), date, submitTaskLeader.getPlaning(),
+                    submitTaskLeader.getFieldWork(), submitTaskLeader.getCaseRefNo());
+
+            String actions = "CreditReviewer submitted to Sr.CreditReviewer";
+            jdbcTemplate1.update(caseAuditsql,submitTaskLeader.getCaseRefNo(),actions,username,username,username,"Sr.CreditReviewer");
+
+
         }
 
         return submitTaskLeader;

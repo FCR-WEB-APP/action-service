@@ -20,8 +20,8 @@ public class CaseDetailsService {
 
 
 
-    public Map<String, Object> addcasedetails(CaseDetails caseDetails) {
-        CaseDetails caseDetails1 = caseDetailsDao.addcasedetails(caseDetails);
+    public Map<String, Object> addcasedetails(CaseDetails caseDetails,String username) {
+        CaseDetails caseDetails1 = caseDetailsDao.addcasedetails(caseDetails,username);
         return Map.of(
                 "status", HttpStatus.CREATED.value(),
                 "success","Successfully added",
@@ -30,8 +30,8 @@ public class CaseDetailsService {
 
     }
 
-    public Map<String, Object> updateCaseDetails(String case_ref_no, CaseDetails caseDetails) {
-        CaseDetails caseDetails1 = caseDetailsDao.updateCaseDetails(case_ref_no,caseDetails);
+    public Map<String, Object> updateCaseDetails(String case_ref_no, CaseDetails caseDetails,String username) {
+        CaseDetails caseDetails1 = caseDetailsDao.updateCaseDetails(case_ref_no,caseDetails,username);
         return Map.of(
                 "status", HttpStatus.OK.value(),
                 "success","Successfully updated",

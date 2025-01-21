@@ -7,10 +7,7 @@ import com.example.Action.Service.SubmitTaskLeaderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -26,9 +23,9 @@ public class SubmitTaskLeaderController {
 
     @PostMapping("/SubmitTaskLeader")
     @PreAuthorize("hasAnyAuthority('Sr.CreditReviewer', 'CreditReviewer','HeadOfFcr')")
-    public ResponseEntity<Map<String,Object>>submitTaskLeader(@RequestBody SubmitTaskLeader submitTaskLeader){
+    public ResponseEntity<Map<String,Object>>submitTaskLeader(@RequestBody SubmitTaskLeader submitTaskLeader, @RequestHeader("username")String username){
         try{
-            Map<String,Object> res = submitTaskLeaderService.submitTaskLeader(submitTaskLeader);
+            Map<String,Object> res = submitTaskLeaderService.submitTaskLeader(submitTaskLeader, username);
             return new ResponseEntity<>(res, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(Map.of("message","unable to submit","error",e.getMessage()),HttpStatus.BAD_REQUEST);

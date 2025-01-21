@@ -25,6 +25,8 @@ public class CaseDetails {
     private String planing;
     private String fieldWork;
     private String actions;
+    private String createdBy;
+    private String updatedBy;
 
 
     public String getCaseRefNo() {
@@ -114,5 +116,21 @@ public class CaseDetails {
 
     public void setActions(String actions) {
         this.actions = actions;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
     }
 }

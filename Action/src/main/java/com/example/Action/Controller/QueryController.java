@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/query")
+@CrossOrigin(origins = "http://localhost:5173")
 public class QueryController {
     private final QueryService queryService;
 
