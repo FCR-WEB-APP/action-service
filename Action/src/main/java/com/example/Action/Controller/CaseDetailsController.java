@@ -28,6 +28,7 @@ public class CaseDetailsController {
         this.caseAuditService = caseAuditService;
     }
 
+    @CrossOrigin("http://localhost:5173/")
     @Operation(summary = "Add CaseDetails",
             description = "Add caseDetails.")
     @ApiResponse(responseCode = "200", description = "Successfully Added CaseDetails")
